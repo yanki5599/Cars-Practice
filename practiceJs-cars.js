@@ -91,19 +91,19 @@ function getMostExpensiveCar(carStore) {
   let mostExpensive = cars.reduce((acc, curr) =>
     normelizePrice(curr.price) > normelizePrice(acc.price) ? curr : acc
   );
-  return mostExpensive;
+  return `${mostExpensive.type} ${mostExpensive.price}`;
 }
 
-console.log(getMostExpensiveCar(carStore));
+console.log(`most expensive car: ${getMostExpensiveCar(carStore)}`);
 
 // Create a function named 'getAmountOfHondas' that gets input of 'cars' array
 // and return the amount of cars named honda.
 // ** tip: you can use reduce array method **
 function getAmountOfHondas(cars) {
-  return cars.filter((car) => car.type == "Honda").length;
+  return cars.filter((car) => car.type === "Honda").length;
 }
 
-console.log(getAmountOfHondas(carStore.cars));
+console.log("amount of Hondas: " + getAmountOfHondas(carStore.cars));
 
 // Create a function named 'getTotalWorth' that gets input of 'cars' array
 // and returns the total sum of money all the cars in the store are worth
